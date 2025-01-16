@@ -6,8 +6,7 @@ metadata:
   tags:
     - api
     - demo
-  annotations:
-    backstage.io/techdocs-ref: dir:.
+
 spec:
   type: openapi
   lifecycle: development
