@@ -1,4 +1,4 @@
-site_name: cat-facts-api
+site_name: public-weather-forecast-api
 docs_dir: docs
 plugins:
   - techdocs-core

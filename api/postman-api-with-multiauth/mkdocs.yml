@@ -1,0 +1,4 @@
+site_name: postman-api-with-multi-authentication
+docs_dir: docs
+plugins:
+  - techdocs-core

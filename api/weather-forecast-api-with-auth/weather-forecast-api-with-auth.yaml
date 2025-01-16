@@ -6,7 +6,8 @@ metadata:
   tags:
     - weather
     - forecast
-
+  annotations:
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: openapi
   lifecycle: development
