@@ -3,7 +3,7 @@ app:
   baseUrl: http://localhost:3000
 
 organization:
-  name: My Company
+  name: Talentica Software
 
 backend:
   # Used for enabling authentication, secret is shared by all backend plugins
@@ -44,12 +44,13 @@ integrations:
     #   token: ${GHE_TOKEN}
 
 proxy:
-  ### Example for how to add a proxy endpoint for the frontend.
-  ### A typical reason to do this is to handle HTTPS and CORS for internal services.
-  # endpoints:
-  #   '/test':
-  #     target: 'https://example.com'
-  #     changeOrigin: true
+  endpoints:
+    '/WeatherForecast':
+      target: 'http://localhost:7008/api/weather'
+      changeOrigin: true   
+    '/PublicWeatherForecast':
+      target: 'http://localhost:7008/api/weather'
+      changeOrigin: true
 
 # Reference documentation http://backstage.io/docs/features/techdocs/configuration
 # Note: After experimenting with basic setup, use CI/CD to generate docs
@@ -96,7 +97,7 @@ catalog:
   locations:
     # Local example data, file locations are relative to the backend process, typically `packages/backend`
     - type: file
-      target: ../../cat-facts-versioning.yaml
+      target: ../../api/*.yaml
 
     # Local example template
     - type: file

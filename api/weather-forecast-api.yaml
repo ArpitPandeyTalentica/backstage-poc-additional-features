@@ -1,0 +1,50 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: public-weather-forecast-api
+  description: Public API providing weather forecast without authentication.
+  tags:
+    - weather
+    - forecast
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: openapi
+  lifecycle: development
+  owner: arpit.pandey@talentica.com
+  definition: |
+    openapi: "3.0.1"
+    info:
+      title: Public Weather API
+      version: "1.0"
+      description: Public API to get weather forecasts without authentication.
+    servers:
+      - url: http://localhost:7008/api/weather
+        description: Local Development Server
+    paths:
+      /PublicWeatherForecast:
+        get:
+          tags:
+            - PublicWeatherForecast
+          operationId: GetPublicWeatherForecast
+          responses:
+            '200':
+              description: Success
+              content:
+                application/json:
+                  schema:
+                    type: array
+                    items:
+                    $ref: "#/components/schemas/WeatherForecast"
+    components:
+      schemas:
+        WeatherForecast:
+          type: object
+          properties:
+            date:
+              type: string
+              format: date
+            temperatureC:
+              type: integer
+            summary:
+              type: string
