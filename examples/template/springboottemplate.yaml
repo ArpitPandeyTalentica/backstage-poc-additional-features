@@ -9,9 +9,8 @@ metadata:
     - java
     - grpc
 spec:
-  owner: service@example.com
+  owner: "arpit.pandey@talentica.com"
   type: service
-
   parameters:
     - title: Provide some simple information
       required:

@@ -1,0 +1,8 @@
+site_name: "hello-world"
+site_description: "Backstage POC"
+
+nav:
+  - Introduction: index.md
+
+plugins:
+  - techdocs-core
